@@ -273,8 +273,8 @@ if(Qt5Core_FOUND)
     Script
     ScriptTools
     Test
-    WebKit
-    WebKitWidgets
+    #WebKit
+    #WebKitWidgets
     Widgets
     WaylandCompositor
   )
@@ -315,8 +315,8 @@ if(Qt5Core_FOUND)
   set(HAVE_QT_SVG ${Qt5Svg_FOUND})
   set(HAVE_QT_DESIGNER ${Qt5Designer_FOUND})
   set(HAVE_QT_PRINTSUPPORT ${Qt5PrintSupport_FOUND})
-  set(HAVE_QT_WEBKIT ${Qt5WebKit_FOUND})
-  set(HAVE_QT_WEBKIT1 ${Qt5WebKitWidgets_FOUND})
+  #set(HAVE_QT_WEBKIT ${Qt5WebKit_FOUND})
+  #set(HAVE_QT_WEBKIT1 ${Qt5WebKitWidgets_FOUND})
 
   # TODO: Remove me once fixed in ECM module
   # more hacks: find qpa/... includes
@@ -351,7 +351,7 @@ else()
     # minimum set
     find_package(Qt4 4.8.0 REQUIRED QtCore QtGui QtNetwork)
   endif()
-  find_package(Qt4 4.8.0 QUIET COMPONENTS QtScript QtScriptTools QtWebKit QtDesigner QtSvg QtTest)
+  find_package(Qt4 4.8.0 QUIET COMPONENTS QtScript QtScriptTools QtDesigner QtSvg QtTest)
 
   include(${QT_USE_FILE})
   set(HAVE_QT_CONCURRENT true)
@@ -361,8 +361,8 @@ else()
     set(HAVE_QT_DESIGNER true)
   endif()
   set(HAVE_QT_PRINTSUPPORT true)
-  set(HAVE_QT_WEBKIT ${QT_QTWEBKIT_FOUND})
-  set(HAVE_QT_WEBKIT1 ${QT_QTWEBKIT_FOUND})
+  #set(HAVE_QT_WEBKIT ${QT_QTWEBKIT_FOUND})
+  #set(HAVE_QT_WEBKIT1 ${QT_QTWEBKIT_FOUND})
 
   find_path(QT_PRIVATE_INCLUDE_DIR private/qobject_p.h PATHS ${QT_INCLUDES})
   if(QT_PRIVATE_INCLUDE_DIR)
@@ -425,7 +425,7 @@ else()
 endif()
 
 add_feature_info("QtScript debugger" QT_QTSCRIPTTOOLS_FOUND "Requires QtScript and QtScriptTools.")
-add_feature_info("Web inspector" HAVE_QT_WEBKIT1 "Requires QtWebKit.")
+#add_feature_info("Web inspector" HAVE_QT_WEBKIT1 "Requires QtWebKit.")
 add_feature_info("Widget .ui file export" HAVE_QT_DESIGNER "Requires QtDesigner library.")
 
 #
